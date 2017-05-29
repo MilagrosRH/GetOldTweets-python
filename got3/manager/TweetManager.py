@@ -117,10 +117,12 @@ class TweetManager:
 			('Connection', "keep-alive")
 		]
 
-		if proxy:
-			opener = urllib2.build_opener(urllib2.ProxyHandler({'http': proxy, 'https': proxy}), urllib2.HTTPCookieProcessor(cookieJar))
-		else:
-			opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cookieJar))
+
+		opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cookieJar))
+		# if proxy:
+		# 	opener = urllib2.build_opener(urllib2.ProxyHandler({'http': proxy, 'https': proxy}), urllib2.HTTPCookieProcessor(cookieJar))
+		# else:
+		# 	opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cookieJar))
 		opener.addheaders = headers
 
 		try:
