@@ -5,7 +5,7 @@ if sys.version_info[0] < 3:
 else:
     import got3 as got
 
-topic = "#elpiscosiesperuano"
+topic = "#niunamenos"
 start_date = "2016-01-01"
 end_date = "2017-05-28"
 num_tweets = 1200
@@ -20,3 +20,5 @@ for t in tweets:
 
 df = pd.DataFrame(tList)
 df.to_csv('tweets.csv', index=False)
+
+print(len(tList))
